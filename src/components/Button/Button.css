@@ -1,0 +1,10 @@
+.button {
+    border: 1px solid #59B3F4;
+    background: #59B3F4;
+    padding: 8px 32px;
+    border-radius: 2rem;
+    transition: transform 0.1s ease;
+}
+.button:hover {
+  transform: scale(1.05);
+}

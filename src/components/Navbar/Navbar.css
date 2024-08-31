@@ -1,0 +1,51 @@
+.navbar__container {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    left: 0;  
+    right: 0;
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+.navbar-button {
+    mix-blend-mode: difference;
+}
+
+.navbar-item {
+    mix-blend-mode: difference;
+}
+
+@media screen and (max-width: 2000px) {
+}
+
+@media screen and (max-width: 1150px) {
+  .navbar__container {
+    max-width: 100%;
+    padding: 2rem 4rem;
+  }
+  .navbar-item {
+    font-size: 24px;
+  }
+  .navbar-button {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+    .navbar__container {
+        max-width: 100%;
+        padding: 2rem 2rem;
+      }
+      .navbar-item {
+        font-size: 16px;
+      }
+      .navbar-button {
+        font-size: 16px;
+        white-space: nowrap;
+      }
+      /* .navbar-header{
+        flex-wrap: wrap;
+        flex-direction: column;
+      } */
+}

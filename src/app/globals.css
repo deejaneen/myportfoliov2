@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+}
+
+@layer utilities {
+  /* Global CSS */
+  .paragraph {
+    @apply text-sm;
+  }
+  .header-2 {
+    @apply text-7xl;
+  }
+  .header-3 {
+    @apply text-7xl;
+  }
+  .header-2-align {
+    @apply flex items-center justify-center flex-col;
+  }
+  .header-1 {
+    @apply text-9xl font-bold;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  /* Navbar Section */
+  .navbar__container {
+    @apply w-full h-auto px-36 py-8;
+  }
+
+  .navbar-header {
+    @apply flex justify-between;
+  }
+  .navbar-item {
+    @apply text-primary text-[40px] font-bold;
+  }
+  .navbar-button {
+    @apply text-primary text-[32px];
+  }
+
+  /* Hero Section */
+
+  .hero__container {
+    @apply w-full h-screen px-36 flex justify-center;
+  }
+  .hero-slice {
+    @apply w-full text-right;
+  }
+
+  /* Contact Me Section */
+  .contactme__container {
+    @apply w-full h-auto px-36 flex justify-center;
+  }
+}
