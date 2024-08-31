@@ -94,7 +94,7 @@ const ProjectsAndTechnologies = () => {
                             return (
                               <li
                                 key={id}
-                                className={`p-2 filter-item ${
+                                className={`p-2 filter-item cursor-pointer ${
                                   selectedFilters.includes(title)
                                     ? "active"
                                     : ""
