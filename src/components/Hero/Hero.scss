@@ -28,6 +28,8 @@
   padding-left: 8rem;
   padding-right: 8rem;
   mix-blend-mode: difference;
+  background-clip: text;
+  color: transparent; 
 }
 
 .location-container {
