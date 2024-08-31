@@ -1,0 +1,334 @@
+.bubblescm1 {
+  position: absolute;
+  background: #d1dfbc;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  bottom: calc(30% - var(--circle-size) / 2);
+  left: calc(30% - var(--circle-size) / 2);
+  z-index: -2;
+}
+.bubblescm2 {
+  position: absolute;
+  background: #325491;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  bottom: calc(40% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+  z-index: -2;
+}
+.bubblescm6 {
+  position: absolute;
+  background: #d1dfbc;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  bottom: calc(90% - var(--circle-size) / 2);
+  right: calc(50% - var(--circle-size) / 2);
+  z-index: -2;
+}
+.bubblescm3 {
+  position: absolute;
+  background: #f0ebcd;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  bottom: -calc(50% - var(--circle-size) / 2);
+  right: -calc(50% - var(--circle-size) / 2);
+  z-index: -2;
+}
+.bubblescm4 {
+  position: absolute;
+  background: #3f69d7;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  bottom: calc(50% - var(--circle-size) / 2);
+  right: calc(50% - var(--circle-size) / 2);
+  z-index: -4;
+}
+.bubblescm5 {
+  position: absolute;
+  background: #3f69d7;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  bottom: -calc(50% - var(--circle-size) / 2);
+  right: -calc(50% - var(--circle-size) / 2);
+  z-index: -3;
+}
+.bubblescm7 {
+  position: absolute;
+  background: #f0ebcd;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  bottom: calc(10% - var(--circle-size) / 2);
+  right: calc(60% - var(--circle-size) / 2);
+  z-index: -8;
+}
+.bubblescm8 {
+  position: absolute;
+  background: #325491;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  bottom: calc(50% - var(--circle-size) / 2);
+  right: calc(50% - var(--circle-size) / 2);
+  z-index: -1;
+}
+.bubblescm9 {
+  position: absolute;
+  background: #59b3f4;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  bottom: calc(5% - var(--circle-size) / 2);
+  right: calc(50% - var(--circle-size) / 2);
+  z-index: -4;
+}
+.bubblescm10 {
+  position: absolute;
+  background: #8abace;
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  bottom: calc(10% - var(--circle-size) / 2);
+  right: calc(30% - var(--circle-size) / 2);
+  z-index: -3;
+}
+.bubblescm11 {
+  position: absolute;
+  background: #d1dfbc;
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  bottom: calc(40% - var(--circle-size) / 2);
+  right: calc(var(--circle-size) / 2);
+  z-index: -2;
+}
+.bubblescm12 {
+  position: absolute;
+  background: #8abace;
+  border-radius: 50%;
+  width: 450px;
+  height: 450px;
+  bottom: calc(30% - var(--circle-size) / 2);
+  left: calc(60% - var(--circle-size) / 2);
+  z-index: -5;
+}
+.bubblescm13 {
+  position: absolute;
+  background: #325491;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  bottom: calc(20% - var(--circle-size) / 2);
+  left: calc(80% - var(--circle-size) / 2);
+  z-index: -2;
+}
+.bubblescm14 {
+  position: absolute;
+  background: #8abace;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  bottom: -calc(40% - var(--circle-size) / 2);
+  right: calc(var(--circle-size) / 2);
+  z-index: -2;
+}
+.bubblescm15 {
+  position: absolute;
+  background: #f0ebcd;
+  border-radius: 50%;
+  width: 370px;
+  height: 370px;
+  bottom: calc(20% - var(--circle-size) / 2);
+  left: -calc(var(--circle-size) / 2);
+  z-index: -4;
+}
+.bubblescm16 {
+  position: absolute;
+  background: #3f69d7;
+  border-radius: 50%;
+  width: 420px;
+  height: 420px;
+  bottom: calc(5% - var(--circle-size) / 2);
+  right: calc(100% - var(--circle-size) / 2);
+  z-index: -5;
+}
+.bubblescm17 {
+  position: absolute;
+  background: #d1dfbc;
+  border-radius: 50%;
+  width: 330px;
+  height: 330px;
+  bottom: calc(40% - var(--circle-size) / 2);
+  right: calc(var(--circle-size) / 2);
+  z-index: -5;
+}
+.bubblescm18 {
+  position: absolute;
+  background: #f0ebcd;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  bottom: -calc(40% - var(--circle-size) / 2);
+  right: calc(100% - var(--circle-size));
+  z-index: -3;
+}
+
+@media screen and (max-width: 2000px) {
+}
+
+@media screen and (max-width: 1150px) {
+  .bubblescm1 {
+    width: 350px;
+    height: 350px;
+  }
+  .bubblescm2 {
+    width: 210px;
+    height: 210px;
+  }
+  .bubblescm3 {
+    width: 91px;
+    height: 91px;
+  }
+  .bubblescm4 {
+    width: 175px;
+    height: 175px;
+  }
+  .bubblescm5 {
+    width: 175px;
+    height: 175px;
+  }
+  .bubblescm6 {
+    width: 175px;
+    height: 175px;
+  }
+  .bubblescm7 {
+    width: 350px;
+    height: 350px;
+  }
+  .bubblescm8 {
+    width: 70px;
+    height: 70px;
+  }
+  .bubblescm9 {
+    width: 350px;
+    height: 350px;
+  }
+  .bubblescm10 {
+    width: 350px;
+    height: 350px;
+  }
+  .bubblescm11 {
+    width: 175px;
+    height: 175px;
+  }
+  .bubblescm12 {
+    width: 315px;
+    height: 315px;
+  }
+  .bubblescm13 {
+    width: 245px;
+    height: 245px;
+  }
+  .bubblescm14 {
+    width: 126px;
+    height: 126px;
+  }
+  .bubblescm15 {
+    width: 259px;
+    height: 259px;
+  }
+  .bubblescm16 {
+    width: 294px;
+    height: 294px;
+  }
+  .bubblescm17 {
+    width: 231px;
+    height: 231px;
+  }
+  .bubblescm18 {
+    width: 91px;
+    height: 91px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .bubblescm1 {
+    width: 200px;
+    height: 200px;
+  }
+  .bubblescm2 {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bubblescm3 {
+    width: 52px;
+    height: 52px;
+  }
+  .bubblescm4 {
+    width: 100px;
+    height: 100px;
+  }
+  .bubblescm5 {
+    width: 100px;
+    height: 100px;
+  }
+  .bubblescm6 {
+    width: 100px;
+    height: 100px;
+  }
+  .bubblescm7 {
+    width: 200px;
+    height: 200px;
+  }
+  .bubblescm8 {
+    width: 40px;
+    height: 40px;
+  }
+  .bubblescm9 {
+    width: 200px;
+    height: 200px;
+  }
+  .bubblescm10 {
+    width: 200px;
+    height: 200px;
+  }
+  .bubblescm11 {
+    width: 100px;
+    height: 100px;
+  }
+  .bubblescm12 {
+    width: 180px;
+    height: 180px;
+  }
+  .bubblescm13 {
+    width: 140px;
+    height: 140px;
+  }
+  .bubblescm14 {
+    width: 72px;
+    height: 72px;
+  }
+  .bubblescm15 {
+    width: 148px;
+    height: 148px;
+  }
+  .bubblescm16 {
+    width: 168px;
+    height: 168px;
+  }
+  .bubblescm17 {
+    width: 132px;
+    height: 132px;
+  }
+  .bubblescm18 {
+    width: 52px;
+    height: 52px;
+  }
+}
