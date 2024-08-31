@@ -30,6 +30,7 @@
   mix-blend-mode: difference;
   background-clip: text;
   color: transparent; 
+  color: #202453;
 }
 
 .location-container {
@@ -52,7 +53,8 @@
   text-align: right;
   justify-content: end;
   position: relative;
-  z-index: -10;
+  z-index: 70;
+  color: #202453;
 }
 
 @media screen and (max-width: 2000px) {
@@ -84,7 +86,7 @@
   .hero-slice{
     flex-direction: column;
     align-items: end; 
-    z-index: 10;
+    z-index: 70;
   }
 }
 
