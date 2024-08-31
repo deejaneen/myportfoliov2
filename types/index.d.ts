@@ -2,7 +2,6 @@ declare interface ButtonProps {
   title: string;
   altTitle: string;
   link: string;
-  onClick?: () => void;
 }
 declare interface SectionHeaderProps {
   title: string;
