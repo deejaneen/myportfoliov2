@@ -217,4 +217,7 @@
   .project-title-text {
     font-size: 1.75rem;
   }
+  .tech-stack{
+    display: none;
+  }
 }
