@@ -26,6 +26,7 @@
   left: 0;
   right: 0;
   bottom: -100px;
+  overflow: hidden;
 }
 .link-item {
   padding-top: 0.5rem;
@@ -109,9 +110,10 @@
     line-height: 3.5rem;
   }
   .links {
+    flex-wrap: wrap;
   }
   .contactme__container {
-    padding: 8rem 0.75rem;
+    padding: 8rem 3rem;
   }
   .copyright {
     font-size: 1rem;

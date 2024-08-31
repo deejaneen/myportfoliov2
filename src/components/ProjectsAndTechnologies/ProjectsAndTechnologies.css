@@ -204,7 +204,7 @@
 
 @media screen and (max-width: 650px) {
   .projects-section{
-    width: 90%;
+    width: 80%;
   }
   .project-title{
     width: 100%;
@@ -219,5 +219,8 @@
   }
   .tech-stack{
     display: none;
+  }
+  .technology-accordion{
+    width: 80%;
   }
 }

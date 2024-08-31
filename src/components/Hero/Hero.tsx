@@ -14,14 +14,12 @@ const Hero = () => {
           <Image src={pin} alt="pin" width={30} height={30} />
           <p className="location">Philippines</p>
         </div>
-        <header>
-          <h1 className="header-1">
-            A FRONTEND <br className="lg:block hidden" />
-            DEVELOPER THAT <br className="lg:block hidden" />
-            TURNS IDEAS INTO <br className="lg:block hidden" />
-            INTERACTIVE REALITY
-          </h1>
-        </header>
+        <h1 className="header-1">
+          A{" "}FRONTEND{" "}<br className="lg:block hidden" />
+          DEVELOPER{" "}THAT{" "}<br className="lg:block hidden" />
+          TURNS{" "}IDEAS{" "}INTO{" "}<br className="lg:block hidden" />
+          INTERACTIVE{" "}REALITY
+        </h1>
       </div>
       <div className="bubbles__container cursor-pointer">
         <Bubbles />
