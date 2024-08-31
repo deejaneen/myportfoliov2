@@ -2,6 +2,10 @@
     position: fixed;
     top: 0;
     z-index: 999;
+    left: 0;  
+    right: 0;
+    box-sizing: border-box;
+    width: 100vw;
 }
 
 .navbar-button {
@@ -40,4 +44,8 @@
         font-size: 16px;
         white-space: nowrap;
       }
+      /* .navbar-header{
+        flex-wrap: wrap;
+        flex-direction: column;
+      } */
 }

@@ -55,6 +55,17 @@
 
 @media screen and (max-width: 2000px) {
 }
+@media screen and (max-width: 1650px) {
+  .hero__container {
+    padding-top: 12rem;
+    padding-bottom: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 @media screen and (max-width: 1150px) {
   .header-1 {
@@ -67,8 +78,6 @@
     padding-left: 4rem;
     padding-right: 4rem;
     height: auto;
-    display: flex;
-    flex-direction: column;
   }
   .hero-slice{
     flex-direction: column;
@@ -78,13 +87,21 @@
 
 @media screen and (max-width: 650px) {
   .header-1 {
-    font-size: 3.25rem;
+    font-size: 3rem;
     line-height: 3rem;
   }
   .hero__container {
     padding-top: 8rem;
-    padding-bottom: 4rem;
+    padding-bottom: 7rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  .location{
+    font-size: 1rem;
+  }
+  .location-container img{
+   width: 20px;
+   height: 20px;
+    margin: auto;
   }
 }

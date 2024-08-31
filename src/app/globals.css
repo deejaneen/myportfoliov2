@@ -56,4 +56,9 @@ body {
   .hero-slice {
     @apply w-full text-right;
   }
+
+  /* Contact Me Section */
+  .contactme__container {
+    @apply w-full h-auto px-36 flex justify-center;
+  }
 }

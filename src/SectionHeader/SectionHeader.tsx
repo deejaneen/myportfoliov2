@@ -5,7 +5,7 @@ const SectionHeader = ({title, aboveTitle, belowTitle}: SectionHeaderProps) => {
   return (
     <div className='header-2-align'>
        <p className='paragraph'>{aboveTitle}</p>
-        <h2 className='header-2'>{title}</h2>
+        <h2 className='header-2 uppercase'>{title}</h2>
         <p className='paragraph'>{belowTitle}</p>
     </div>
   )

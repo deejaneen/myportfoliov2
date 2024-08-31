@@ -99,7 +99,7 @@ export const technologiesData = [
     {
         id: 12,
         icon: '/icons/reacthookform.svg',
-        title: 'React Hook Form',
+        title: 'Hook Form',
         category: 'Library',
     },
     {

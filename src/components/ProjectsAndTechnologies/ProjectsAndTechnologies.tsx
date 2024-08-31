@@ -1,29 +1,87 @@
 "use client";
 import SectionHeader from "@/SectionHeader/SectionHeader";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProjectsAndTechnologies.css";
 import { categoriesData } from "./technologies";
 import { projectsData } from "./projects";
-import Technology from "./Technology/Technology";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
+import { technologiesData } from "./technologies";
+import { FaPlus, FaMinus } from "react-icons/fa6";
+import { AnimatePresence } from "framer-motion";
 
 const ProjectsAndTechnologies = () => {
   const [category, setCategory] = useState(categoriesData);
 
   const [project, setProject] = useState(projectsData);
-  const [selectedTechnology, setSelectedTechnology] = useState<string | null>(
-    null
+  const [items, setItems] = useState(technologiesData);
+  const [isOpen, setIsOpen] = useState(
+    categoriesData.reduce((acc, curr) => {
+      acc[curr.id] = true; 
+      return acc;
+    }, {} as { [key: string]: boolean })
   );
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState(project);
 
- const filteredProjects = selectedTechnology
-    ? projectsData.filter((project) =>
-        (project.category || []).includes(selectedTechnology)
-      )
-    : projectsData;
+  let filters = [
+    "PHP",
+    "Java",
+    "JavaScript",
+    "TypeScript",
+    "HTML",
+    "Laravel",
+    "React",
+    "NextJS",
+    "TailwindCSS",
+    "Framer-Motion",
+    "ChartJS",
+    "React Hook Form",
+    "ShadCN-UI",
+    "Zod",
+    "MariaDB",
+    "MySQL",
+    "Vite",
+    "Git",
+    "GitHub",
+    "Docker",
+    "Vercel",
+    "NodeJS",
+    "Dwolla",
+    "Plaid",
+  ];
+  const toggleOpen = (id: string) => {
+    setIsOpen((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
+  const handleFilterButtonClick = (selectedCategory: string) => {
+    if (selectedFilters.includes(selectedCategory)) {
+      setSelectedFilters(
+        selectedFilters.filter((el) => el !== selectedCategory)
+      );
+    } else {
+      setSelectedFilters([...selectedFilters, selectedCategory]);
+    }
+  };
 
+  useEffect(() => {
+    filterItems();
+  }, [selectedFilters]);
+
+  const filterItems = () => {
+    if (selectedFilters.length > 0) {
+      const tempProjects = projectsData.filter((project) =>
+        selectedFilters.some((filter) => project.category.includes(filter))
+      );
+      setFilteredProjects(tempProjects);
+    } else {
+      setFilteredProjects([...projectsData]);
+    }
+  };
 
   return (
     <section className="bg-seafoam flex flex-row projectstechnologies__container">
@@ -38,10 +96,54 @@ const ProjectsAndTechnologies = () => {
             {category.map((elem) => {
               const { id, category } = elem;
               return (
-                <Technology
-                  category={category}
-                  onClick={(title) => setSelectedTechnology(title)}
-                />
+                <div className="min-w-full technology-container" key={id}>
+                  <div className="technology-title">
+                    <div
+                      className="technology-item cursor-pointer"
+                      onClick={() => toggleOpen(id.toString())}
+                    >
+                      <span className="title-text"> {category} </span>
+                      <span className="open-toggle">
+                        {isOpen[id] ? <FaMinus /> : <FaPlus />}
+                      </span>
+                    </div>
+                  </div>
+                  <AnimatePresence>
+                    {isOpen[id] && (
+                      <motion.div
+                        className="flex items-center justify-center mapped-items-container"
+                      >
+                        {items
+                          .filter((item) => item.category === category)
+                          .map((elem) => {
+                            const { id, icon, title } = elem;
+                            return (
+                              <div
+                                key={id}
+                                className={`p-2 filter-item ${
+                                  selectedFilters.includes(title)
+                                    ? "active"
+                                    : ""
+                                }`}
+                                onClick={() => handleFilterButtonClick(title)}
+                              >
+                                <div className="technologies-category-item  p-2 ">
+                                  <img
+                                    src={icon}
+                                    alt={title}
+                                    className="object-contain"
+                                  />
+                                  <p className="text-center text-[12px] hidden lg:block">
+                                    {title}
+                                  </p>
+                                </div>
+                              </div>
+                            );
+                          })}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </div>
@@ -55,29 +157,44 @@ const ProjectsAndTechnologies = () => {
         />
         <div className="projects-section">
           <div className="flex flex-col items-center justify-center pt-16">
-            {filteredProjects.map((elem) => {
-              const { id, title, des, img, iconLists, liveLink, codeLink } =
-                elem;
+            {filteredProjects.map((projects) => {
+              const {
+                id,
+                category,
+                title,
+                des,
+                img,
+                iconLists,
+                liveLink,
+                codeLink,
+                projectWeight,
+              } = projects;
               return (
-                <div key={id} className="min-w-full project-container">
+                <div className="min-w-full project-container" key={id}>
                   <div className="project-item">
                     <div className="project-title">
-                      <span className="project-title-text">{title}</span>
+                      <span
+                        className={`project-title-text ${
+                          projectWeight === "Heavy" ? "heavy" : "light"
+                        }`}
+                      >
+                        {title}
+                      </span>
                       <span className="project-description">{des}</span>
                       <div className="project-buttons">
-                        <button className="flex items-center justify-center">
+                        <a className="flex items-center justify-center" href={codeLink} target="_blank">
                           <FaGithub /> &nbsp;Code
-                        </button>
-                        <button className="flex items-center justify-center">
+                        </a>
+                        <a className="flex items-center justify-center"  href={liveLink} target="_blank">
                           <FaPlay /> &nbsp;Live
-                        </button>
+                        </a>
                       </div>
                       <div className="tech-stack">
                         <p className="mr-4">Tech Stack</p>
 
                         {iconLists.map((icon, index) => (
                           <motion.span
-                            className="tech-stack-bubble"
+                            className="tech-stack-bubble" 
                             key={index}
                             style={{
                               transform: `translateX(-${5 * index * 2}px)`,
@@ -93,7 +210,7 @@ const ProjectsAndTechnologies = () => {
                           </motion.span>
                         ))}
                       </div>
-                      <div className="image-container">
+                      <a href={liveLink} className="image-container hidden lg:block">
                         <Image
                           src={img}
                           alt={title}
@@ -101,7 +218,7 @@ const ProjectsAndTechnologies = () => {
                           height={200}
                           className="rounded image"
                         />
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>
