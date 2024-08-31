@@ -130,7 +130,7 @@ const ProjectsAndTechnologies = () => {
           belowTitle="portfolio"
         />
         <div className="projects-section">
-          <div className="flex flex-col items-center justify-center pt-16">
+          <ul className="flex flex-col items-center justify-center pt-16">
             {filteredProjects.map((projects) => {
               const {
                 id,
@@ -144,22 +144,22 @@ const ProjectsAndTechnologies = () => {
                 projectWeight,
               } = projects;
               return (
-                <div className="min-w-full project-container" key={id}>
+                <li className="min-w-full project-container" key={id}>
                   <div className="project-item">
                     <div className="project-title">
-                      <span
+                      <h3
                         className={`project-title-text ${
                           projectWeight === "Heavy" ? "heavy" : "light"
                         }`}
                       >
                         {title}
-                      </span>
+                      </h3>
                       <p className="project-description">{des}</p>
                       <div className="project-buttons">
-                        <a className="flex items-center justify-center" href={codeLink} target="_blank">
+                        <a className="flex items-center justify-center" href={codeLink} target="_blank" aria-label={`Link that redirects to ${title} website repository on github`}>
                           <FaGithub /> &nbsp;Code
                         </a>
-                        <a className="flex items-center justify-center"  href={liveLink} target="_blank">
+                        <a className="flex items-center justify-center"  href={liveLink} target="_blank" aria-label={`Link that redirects to ${title} website`}>
                           <FaPlay /> &nbsp;Live
                         </a>
                       </div>
@@ -182,7 +182,7 @@ const ProjectsAndTechnologies = () => {
                           </motion.span>
                         ))}
                       </div>
-                      <a href={liveLink} className="image-container hidden lg:block" target="_blank">
+                      <a href={liveLink} className="image-container hidden lg:block" target="_blank" aria-label={`Link that redirects to ${title} website`}>
                         <Image
                           src={img}
                           alt={title}
@@ -193,10 +193,10 @@ const ProjectsAndTechnologies = () => {
                       </a>
                     </div>
                   </div>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </section>
     </div>

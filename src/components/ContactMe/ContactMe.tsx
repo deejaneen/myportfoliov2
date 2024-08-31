@@ -12,6 +12,7 @@ const ContactMe = () => {
               href="https://linkedin.com/in/dttomelden"
               className="link-item linkedin cursor-pointer"
               target="_blank"
+              aria-label="Link that redirects to Djanine Tara Tomelden LinkedIn profile"
             >
               LinkedIn
             </a>
@@ -21,6 +22,7 @@ const ContactMe = () => {
               href="mailto:tomeldendjaninetara@gmail.com"
               className="link-item email cursor-pointer"
               target="_blank"
+              aria-label="Link to email Djanine Tara Tomelden"
             >
               Email
             </a>
@@ -30,6 +32,7 @@ const ContactMe = () => {
               href="https://github.com/deejaneen"
               className="link-item github cursor-pointer"
               target="_blank"
+              aria-label="Link that redirects to Djanine Tara Tomelden Github Profile"
             >
               Github
             </a>
