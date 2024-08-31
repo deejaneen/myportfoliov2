@@ -69,28 +69,28 @@ const myjourneyData = [
 const MyJourney = () => {
   const [items, setItems] = useState(myjourneyData);
   return (
-    <section className="bg-vanilla-cream myjourney__container">
+    <div className="bg-vanilla-cream myjourney__container">
       <div className="my-journey">
-        <div className="header-2-align">
+        <header className="header-2-align">
           <SectionHeader
             title="My Journey"
             aboveTitle="Follow"
             belowTitle="so far..."
           />
-        </div>
+        </header>
 
-        <div className="timeline">
+        <ul className="timeline">
           {items.length > 0 && items[0].icon && (
-            <div className="first-circle circle-container px-8 lg:px-0">
+            <li className="first-circle circle-container px-8 lg:px-0">
               <Circle icon={items[0].icon} />
               <div className="date-container w-full">{items[0].date}</div>
-            </div>
+            </li>
           )}
 
           {items.map((elem, index) => {
             const { id, title, org, date, des, direction, icon } = elem;
             return (
-              <div key={id} className="timeline-element-container">
+              <li key={id} className="timeline-element-container">
                 <div className="panel">
                   {elem.direction === "left" ? (
                     <JourneyCard
@@ -100,9 +100,7 @@ const MyJourney = () => {
                       direction={direction}
                     />
                   ) : (
-                    <div className="date-right-container">
-                      {date}
-                    </div>
+                    <h4 className="date-right-container">{date}</h4>
                   )}
                   <Pillar />
                   {elem.direction === "right" ? (
@@ -113,28 +111,26 @@ const MyJourney = () => {
                       direction={direction}
                     />
                   ) : (
-                    <div className="date-left-container">
-                      {date}
-                    </div>
+                    <h4 className="date-left-container">{date}</h4>
                   )}
                 </div>
                 {id < items.length && (
-                  <div className='circle-container'>
-                    <Circle icon={items[index+1].icon} />
-                    <div className="date-container block lg:hidden">{date}</div>
+                  <div className="circle-container">
+                    <Circle icon={items[index + 1].icon} />
+                    <h4 className="date-container block lg:hidden">{date}</h4>
                   </div>
                 )}
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
-    </section>
+    </div>
   );
 };
 
 export default MyJourney;
-
+  
 const Circle = ({ icon }: CircleProps) => {
   return (
     <div className="circle rounded-full">
@@ -149,24 +145,30 @@ const Pillar = () => {
 
 const JourneyCard = ({ title, org, des, direction }: MyJourneyProps) => {
   return (
-    <div className="journeycard">
-      {direction === "left" ? (
-        <div className="journeycard-left">
-          <div className="card-content-holder">
-            <div className="card-title">{title}</div>
-            <div className="card-description">{org}</div>
-            <div className="card-content">{des}</div>
-          </div>
-        </div>
-      ) : (
-        <div className="journeycard-right">
-          <div className="card-content-holder">
-            <div className="card-title">{title}</div>
-            <div className="card-description">{org}</div>
-            <div className="card-content">{des}</div>
-          </div>
-        </div>
-      )}
-    </div>
+    <article className="journeycard">
+      <ul>
+        {direction === "left" ? (
+          <li className="journeycard-left">
+            <div className="card-content-holder">
+              <header>
+                <h3 className="card-title">{title}</h3>
+                <h4 className="card-description">{org}</h4>
+              </header>
+              <div className="card-content">{des}</div>
+            </div>
+          </li>
+        ) : (
+          <li className="journeycard-right">
+            <div className="card-content-holder">
+              <header>
+                <h3 className="card-title">{title}</h3>
+                <h4 className="card-description">{org}</h4>
+              </header>
+              <div className="card-content">{des}</div>
+            </div>
+          </li>
+        )}
+      </ul>
+    </article>
   );
 };

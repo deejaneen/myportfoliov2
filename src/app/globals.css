@@ -38,9 +38,9 @@ body {
     @apply w-full h-auto px-36 py-8;
   }
 
-  .navbar-header {
+  /* .navbar-header {
     @apply flex justify-between;
-  }
+  } */
   .navbar-item {
     @apply text-primary text-[40px] font-bold;
   }

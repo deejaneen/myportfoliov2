@@ -10,21 +10,21 @@ export default function Home() {
   return (
     <main className="grid grid-cols-12">
       <ReactLenis root>
-        <div className="col-span-12">
+        <header className="col-span-12">
           <Navbar />
-        </div>
-        <div className="col-span-12">
+        </header>
+        <section className="col-span-12">
           <Hero />
-        </div>
-        <div className="col-span-12">
+        </section>
+        <section className="col-span-12">
           <ProjectsAndTechnologies />
-        </div>
-        <div className="col-span-12">
+        </section>
+        <section className="col-span-12">
           <MyJourney />
-        </div>
-        <div className="col-span-12">
+        </section>
+        <footer className="col-span-12">
           <ContactMe />
-        </div>
+        </footer>
       </ReactLenis>
     </main>
   );

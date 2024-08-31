@@ -8,13 +8,12 @@ import Image from "next/image";
 const pin = "/icons/pin.svg";
 const Hero = () => {
   return (
-    <section className="hero__container">
+    <div className="hero__container">
       <div className="hero-slice">
         <div className="location-container">
           <Image src={pin} alt="pin" width={30} height={30} />
-          <h5 className="location">Philippines</h5>
+          <p className="location">Philippines</p>
         </div>
-
         <h1 className="header-1">
           A{" "}FRONTEND{" "}<br className="lg:block hidden" />
           DEVELOPER{" "}THAT{" "}<br className="lg:block hidden" />
@@ -25,7 +24,7 @@ const Hero = () => {
       <div className="bubbles__container cursor-pointer">
         <Bubbles />
       </div>
-    </section>
+    </div>
   );
 };
 

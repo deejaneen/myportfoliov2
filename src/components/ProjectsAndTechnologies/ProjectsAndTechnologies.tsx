@@ -26,32 +26,6 @@ const ProjectsAndTechnologies = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [filteredProjects, setFilteredProjects] = useState(project);
 
-  let filters = [
-    "PHP",
-    "Java",
-    "JavaScript",
-    "TypeScript",
-    "HTML",
-    "Laravel",
-    "React",
-    "NextJS",
-    "TailwindCSS",
-    "Framer-Motion",
-    "ChartJS",
-    "React Hook Form",
-    "ShadCN-UI",
-    "Zod",
-    "MariaDB",
-    "MySQL",
-    "Vite",
-    "Git",
-    "GitHub",
-    "Docker",
-    "Vercel",
-    "NodeJS",
-    "Dwolla",
-    "Plaid",
-  ];
   const toggleOpen = (id: string) => {
     setIsOpen((prevState) => ({
       ...prevState,
@@ -84,21 +58,21 @@ const ProjectsAndTechnologies = () => {
   };
 
   return (
-    <section className="bg-seafoam flex flex-row projectstechnologies__container">
-      <div className="technologies text-seafoam">
+    <div className="bg-seafoam flex flex-row projectstechnologies__container">
+      <aside className="technologies text-seafoam">
         <SectionHeader
           title="TECHNOLOGIES"
           aboveTitle="I constantly try to add to and learn more about the"
           belowTitle="I work with"
         />
         <div className="technology-accordion">
-          <div className="flex flex-col items-center justify-center pt-16">
+          <ul className="flex flex-col items-center justify-center pt-16">
             {category.map((elem) => {
               const { id, category } = elem;
               return (
-                <div className="min-w-full technology-container" key={id}>
+                <li className="min-w-full technology-container" key={id}>
                   <div className="technology-title">
-                    <div
+                    <h3
                       className="technology-item cursor-pointer"
                       onClick={() => toggleOpen(id.toString())}
                     >
@@ -106,11 +80,11 @@ const ProjectsAndTechnologies = () => {
                       <span className="open-toggle">
                         {isOpen[id] ? <FaMinus /> : <FaPlus />}
                       </span>
-                    </div>
+                    </h3>
                   </div>
                   <AnimatePresence>
                     {isOpen[id] && (
-                      <motion.div
+                      <motion.ul
                         className="flex items-center justify-center mapped-items-container"
                       >
                         {items
@@ -118,7 +92,7 @@ const ProjectsAndTechnologies = () => {
                           .map((elem) => {
                             const { id, icon, title } = elem;
                             return (
-                              <div
+                              <li
                                 key={id}
                                 className={`p-2 filter-item ${
                                   selectedFilters.includes(title)
@@ -137,19 +111,19 @@ const ProjectsAndTechnologies = () => {
                                     {title}
                                   </p>
                                 </div>
-                              </div>
+                              </li>
                             );
                           })}
-                      </motion.div>
+                      </motion.ul>
                     )}
                   </AnimatePresence>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
-      </div>
-      <div className="projects text-primary">
+      </aside>
+      <section className="projects text-primary">
         <SectionHeader
           title="PROJECTS"
           aboveTitle="I constantly try to grow and add to my"
@@ -180,7 +154,7 @@ const ProjectsAndTechnologies = () => {
                       >
                         {title}
                       </span>
-                      <span className="project-description">{des}</span>
+                      <p className="project-description">{des}</p>
                       <div className="project-buttons">
                         <a className="flex items-center justify-center" href={codeLink} target="_blank">
                           <FaGithub /> &nbsp;Code
@@ -200,17 +174,15 @@ const ProjectsAndTechnologies = () => {
                               transform: `translateX(-${5 * index * 2}px)`,
                             }}
                           >
-                            <div className="w-full h-full">
                               <img
                                 src={icon}
                                 alt={title}
                                 className="object-contain"
                               />
-                            </div>
                           </motion.span>
                         ))}
                       </div>
-                      <a href={liveLink} className="image-container hidden lg:block">
+                      <a href={liveLink} className="image-container hidden lg:block" target="_blank">
                         <Image
                           src={img}
                           alt={title}
@@ -226,8 +198,8 @@ const ProjectsAndTechnologies = () => {
             })}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

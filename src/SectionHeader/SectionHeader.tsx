@@ -3,11 +3,11 @@ import './SectionHeader.css'
 
 const SectionHeader = ({title, aboveTitle, belowTitle}: SectionHeaderProps) => {
   return (
-    <div className='header-2-align'>
-       <p className='paragraph'>{aboveTitle}</p>
+    <hgroup className='header-2-align'>
+       <span className='paragraph'>{aboveTitle}</span>
         <h2 className='header-2 uppercase'>{title}</h2>
-        <p className='paragraph'>{belowTitle}</p>
-    </div>
+        <span className='paragraph'>{belowTitle}</span>
+    </hgroup>
   )
 }
 

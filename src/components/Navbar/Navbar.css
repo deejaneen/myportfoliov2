@@ -6,6 +6,8 @@
     right: 0;
     box-sizing: border-box;
     width: 100vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navbar-button {
@@ -14,6 +16,16 @@
 
 .navbar-item {
     mix-blend-mode: difference;
+}
+.button {
+  border: 1px solid #59B3F4;
+  background: #59B3F4;
+  padding: 8px 32px;
+  border-radius: 2rem;
+  transition: transform 0.1s ease;
+}
+.button:hover {
+transform: scale(1.05);
 }
 
 @media screen and (max-width: 2000px) {
@@ -44,8 +56,4 @@
         font-size: 16px;
         white-space: nowrap;
       }
-      /* .navbar-header{
-        flex-wrap: wrap;
-        flex-direction: column;
-      } */
 }

@@ -1,16 +1,28 @@
-'use client'
+"use client";
 import React from "react";
-import Button from "@/components/Button/Button";
-import './Navbar.css';
-import {motion} from 'framer-motion'
+import "./Navbar.css";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
     <nav className="navbar__container mix-blend-difference">
-      <div className="navbar-header">
-        <a href="#"><h2 className="navbar-item flex-center">Djanine Tara Tomelden</h2></a>
-        <motion.div className="navbar-button" whileTap={{scale:0.95}}><Button title="Available for work" altTitle="Download Resume" link='/files/djaninetaratomeldenresume.pdf'/></motion.div>
-      </div>  
+      <ul className="flex justify-between w-full">
+        <li>
+          <a href="#" className="navbar-item flex-center">
+            Djanine Tara Tomelden
+          </a>
+        </li>
+        <li>
+          <motion.a
+            whileTap={{ scale: 0.95 }}
+            href="/files/djaninetaratomeldenresume.pdf"
+            download
+            className=" navbar-button button flex-center"
+          >
+            Available for work
+          </motion.a>
+        </li>
+      </ul>
     </nav>
   );
 };

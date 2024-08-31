@@ -49,11 +49,14 @@
   -webkit-text-fill-color: transparent;
   line-height: 6rem;
 }
-
+.text-container{
+  position: relative;
+  z-index: 300;
+}
 .links {
   justify-content: end;
   position: relative;
-  z-index: 300;
+ 
 }
 
 .linkedin {
