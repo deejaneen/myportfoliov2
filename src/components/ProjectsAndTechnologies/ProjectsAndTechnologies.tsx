@@ -19,7 +19,7 @@ const ProjectsAndTechnologies = () => {
   const [items, setItems] = useState(technologiesData);
   const [isOpen, setIsOpen] = useState(
     categoriesData.reduce((acc, curr) => {
-      acc[curr.id] = true; 
+      acc[curr.id] = true;
       return acc;
     }, {} as { [key: string]: boolean })
   );
@@ -59,7 +59,7 @@ const ProjectsAndTechnologies = () => {
 
   return (
     <div className="bg-seafoam flex flex-row projectstechnologies__container">
-      <aside className="technologies text-seafoam">
+      <section className="technologies text-seafoam">
         <SectionHeader
           title="TECHNOLOGIES"
           aboveTitle="I constantly try to add to and learn more about the"
@@ -67,6 +67,7 @@ const ProjectsAndTechnologies = () => {
         />
         <div className="technology-accordion">
           <ul className="flex flex-col items-center justify-center pt-16">
+            <p  className="technology-sort-instructions">Click a technology to sort the projects</p>
             {category.map((elem) => {
               const { id, category } = elem;
               return (
@@ -84,9 +85,7 @@ const ProjectsAndTechnologies = () => {
                   </div>
                   <AnimatePresence>
                     {isOpen[id] && (
-                      <motion.ul
-                        className="flex items-center justify-center mapped-items-container"
-                      >
+                      <motion.ul className="flex items-center justify-center mapped-items-container">
                         {items
                           .filter((item) => item.category === category)
                           .map((elem) => {
@@ -122,7 +121,7 @@ const ProjectsAndTechnologies = () => {
             })}
           </ul>
         </div>
-      </aside>
+      </section>
       <section className="projects text-primary">
         <SectionHeader
           title="PROJECTS"
@@ -131,6 +130,7 @@ const ProjectsAndTechnologies = () => {
         />
         <div className="projects-section">
           <ul className="flex flex-col items-center justify-center pt-16">
+          <p className="technology-sort-instructions">Click a technology to sort the projects</p>
             {filteredProjects.map((projects) => {
               const {
                 id,
@@ -156,10 +156,20 @@ const ProjectsAndTechnologies = () => {
                       </h3>
                       <p className="project-description">{des}</p>
                       <div className="project-buttons">
-                        <a className="flex items-center justify-center" href={codeLink} target="_blank" aria-label={`Link that redirects to ${title} website repository on github`}>
+                        <a
+                          className="flex items-center justify-center"
+                          href={codeLink}
+                          target="_blank"
+                          aria-label={`Link that redirects to ${title} website repository on github`}
+                        >
                           <FaGithub /> &nbsp;Code
                         </a>
-                        <a className="flex items-center justify-center"  href={liveLink} target="_blank" aria-label={`Link that redirects to ${title} website`}>
+                        <a
+                          className="flex items-center justify-center"
+                          href={liveLink}
+                          target="_blank"
+                          aria-label={`Link that redirects to ${title} website`}
+                        >
                           <FaPlay /> &nbsp;Live
                         </a>
                       </div>
@@ -168,21 +178,26 @@ const ProjectsAndTechnologies = () => {
 
                         {iconLists.map((icon, index) => (
                           <motion.span
-                            className="tech-stack-bubble" 
+                            className="tech-stack-bubble"
                             key={index}
                             style={{
                               transform: `translateX(-${5 * index * 2}px)`,
                             }}
                           >
-                              <img
-                                src={icon}
-                                alt={title}
-                                className="object-contain"
-                              />
+                            <img
+                              src={icon}
+                              alt={title}
+                              className="object-contain"
+                            />
                           </motion.span>
                         ))}
                       </div>
-                      <a href={liveLink} className="image-container hidden lg:block" target="_blank" aria-label={`Link that redirects to ${title} website`}>
+                      <a
+                        href={liveLink}
+                        className="image-container hidden lg:block"
+                        target="_blank"
+                        aria-label={`Link that redirects to ${title} website`}
+                      >
                         <Image
                           src={img}
                           alt={title}

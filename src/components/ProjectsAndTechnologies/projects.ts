@@ -66,4 +66,15 @@ export const projectsData: Project[] = [
         codeLink: 'https://github.com/deejaneen/gpt3react',
         projectWeight: 'Light'
     },
+    // {
+    //     id: 7,
+    //     title: 'My Portfolio v1',
+    //     des: 'First version of this same portfolio website',
+    //     img: '',
+    //     iconLists: ['', '', ''],
+    //     liveLink: '',
+    //     category: ['',''],
+    //     codeLink: '',
+    //     projectWeight: 'Light'
+    // },
 ];

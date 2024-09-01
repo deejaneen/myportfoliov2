@@ -15,10 +15,10 @@ const Hero = () => {
           <p className="location">Philippines</p>
         </div>
         <h1 className="header-1">
-          A{" "}FRONTEND{" "}<br className="lg:block hidden" />
-          DEVELOPER{" "}THAT{" "}<br className="lg:block hidden" />
-          TURNS{" "}IDEAS{" "}INTO{" "}<br className="lg:block hidden" />
-          INTERACTIVE{" "}REALITY
+          A FRONTEND <br className="lg:block hidden" />
+          DEVELOPER THAT <br className="lg:block hidden" />
+          TURNS IDEAS INTO <br className="lg:block hidden" />
+          INTERACTIVE REALITY
         </h1>
       </div>
       <div className="bubbles__container cursor-pointer">
