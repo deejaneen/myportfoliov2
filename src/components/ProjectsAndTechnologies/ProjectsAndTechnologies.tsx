@@ -66,8 +66,11 @@ const ProjectsAndTechnologies = () => {
           belowTitle="I work with"
         />
         <div className="technology-accordion">
-          <ul className="flex flex-col items-center justify-center pt-16">
-            <p  className="technology-sort-instructions">Click a technology to sort the projects</p>
+          <p className="technology-sort-instructions pt-16">
+            Click a technology to sort the projects
+          </p>
+
+          <ul className="flex flex-col items-center justify-center ">
             {category.map((elem) => {
               const { id, category } = elem;
               return (
@@ -129,8 +132,10 @@ const ProjectsAndTechnologies = () => {
           belowTitle="portfolio"
         />
         <div className="projects-section">
-          <ul className="flex flex-col items-center justify-center pt-16">
-          <p className="technology-sort-instructions">Click a technology to sort the projects</p>
+          <p className="technology-sort-instructions pt-16">
+            Click a technology to sort the projects
+          </p>
+          <ul className="flex flex-col items-center justify-center ">
             {filteredProjects.map((projects) => {
               const {
                 id,
