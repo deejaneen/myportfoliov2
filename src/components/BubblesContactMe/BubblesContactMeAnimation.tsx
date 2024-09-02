@@ -62,7 +62,7 @@ const BubblesCM = () => {
   }, [animate]);
 
   return (
-    <div ref={scope} className="mix-blend-lighten">
+    <div ref={scope} className="mix-blend-lighten cursor-pointer">
       <motion.div className="bubblecm bubblescm1" drag dragSnapToOrigin></motion.div>
       <motion.div className="bubblecm bubblescm2" drag dragSnapToOrigin></motion.div>
       <motion.div className="bubblecm bubblescm3" drag dragSnapToOrigin></motion.div>
