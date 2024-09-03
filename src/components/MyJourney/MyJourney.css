@@ -129,8 +129,8 @@
     display: flex;
     align-items: start;
     justify-content: start;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 4rem;
     padding-bottom: 0;
   }
@@ -165,14 +165,18 @@
   }
 }
 
-@media screen and (max-width: 650px) {
-    .timeline {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        padding-top: 4rem;
-        padding-bottom: 0;
-      }
-      .panel{
-        width: 100%;
-      }
+@media screen and (min-width: 300px) and (max-width: 450px) {
+  .timeline-element-container {
+    padding: 0;
+  }
+  .timeline {
+    padding: 1rem;
+  }
+  .card-title{
+    font-size: 1.25rem;
+  }
+  .card-content,
+  .card-description {
+    font-size: 1rem;
+  }
 }

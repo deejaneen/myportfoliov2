@@ -106,7 +106,7 @@ const ProjectsAndTechnologies = () => {
                                 <div className="technologies-category-item  p-2 ">
                                   <img
                                     src={icon}
-                                    alt={title}
+                                    alt={`I have worked with {title}`}
                                     className="object-contain"
                                   />
                                   <p className="text-center text-[12px] hidden lg:block">
@@ -185,13 +185,10 @@ const ProjectsAndTechnologies = () => {
                           <motion.span
                             className="tech-stack-bubble"
                             key={index}
-                            style={{
-                              transform: `translateX(-${5 * index * 2}px)`,
-                            }}
                           >
                             <img
                               src={icon}
-                              alt={title}
+                              alt={`I have worked with {title}`}
                               className="object-contain"
                             />
                           </motion.span>
