@@ -19,7 +19,7 @@ const Navbar = () => {
         </li>
         <li>
           <motion.a
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: .95 }}
             href="/files/djaninetaratomeldenresume.pdf"
             download
             className=" navbar-button button flex-center"

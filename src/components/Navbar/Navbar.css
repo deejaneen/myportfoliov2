@@ -24,19 +24,19 @@
   background: #59b3f4;
   padding: 8px 32px;
   border-radius: 2rem;
-  transition: transform 0.1s ease;
+  transition: transform .1s ease;
 }
 .button:hover {
   transform: scale(1.05);
 }
 
 .text-hidden {
-  animation: moveUp 0.1s ease-out;
+  animation: moveUp .1s ease-out;
   display: none;
 }
 .text-active {
   display: block;
-  animation: moveCenter 0.1s ease-out;
+  animation: moveCenter .1s ease-out;
 }
 
 @keyframes moveUp {

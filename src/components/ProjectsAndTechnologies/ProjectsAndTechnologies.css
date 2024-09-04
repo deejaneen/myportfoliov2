@@ -60,7 +60,7 @@
   height: 4rem;
 }
 .filter-item {
-  opacity: 0.5;
+  opacity: .5;
 }
 .active {
   opacity: 1;
@@ -70,7 +70,7 @@
 }
 .light {
   color: #202453;
-  opacity: 0.7;
+  opacity: .7;
 }
 
 .mapped-items-container {
@@ -106,14 +106,14 @@
 }
 .project-description {
   color: #f0ebcd;
-  padding: 0.5rem 0;
+  padding: .5rem 0;
 }
 .project-buttons {
   display: flex;
 }
 .project-buttons a {
   background-color: #f0ebcd;
-  padding: 0.25rem 1rem;
+  padding: .25rem 1rem;
   margin-right: 1rem;
   border-radius: 20px;
 }
@@ -141,12 +141,12 @@
   background-color: #f0ebcd;
   border: 1px solid #202352;
   border-radius: 50%;
-  padding: 0.5rem;
+  padding: .5rem;
   transform: translateX(10%);
 }
 .tech-stack {
   display: flex;
-  padding: 0.5rem 0;
+  padding: .5rem 0;
   align-items: center;
   flex-wrap: wrap;
   width: 60%;

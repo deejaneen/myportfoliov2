@@ -28,11 +28,11 @@ const BubblesCM = () => {
               randomNumberBetween(-100, 100),
               randomNumberBetween(-100, 100),
             ],
-            scale: [0.75, 0.25, 0],
+            scale: [.75, .25, 0],
             opacity: 1,
           },
           {
-            delay: randomNumberBetween(0.1, 0.7),
+            delay: randomNumberBetween(.1, .7),
             ease: "easeIn",
             repeat: Infinity,
             repeatType: "loop",

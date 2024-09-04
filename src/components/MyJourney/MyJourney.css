@@ -39,7 +39,7 @@
   color: #202453;
 }
 .pillar {
-  width: 0.5rem;
+  width: .5rem;
   height: 100%;
   background-color: #add7cb;
   margin: auto;
@@ -84,8 +84,8 @@
   display: flex;
   flex-direction: column;
   gap: 0 2rem;
-  box-shadow: 0px 4px 4px rgba(32, 36, 83, 0.5);
-  border-radius: 0.75rem;
+  box-shadow: 0px 4px 4px rgba(32, 36, 83, .5);
+  border-radius: .75rem;
   padding: 1rem;
   background-color: #8abace;
   align-items: center;
@@ -122,7 +122,7 @@
   }
   .date-container {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: .75rem;
 
   }
   .timeline {
@@ -135,7 +135,7 @@
     padding-bottom: 0;
   }
   .pillar {
-    width: 0.5rem;
+    width: .5rem;
     height: 100%;
   }
   .timeline-element-container {

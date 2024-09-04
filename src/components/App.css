@@ -8,3 +8,12 @@
     --vanilla-cream: "#F0EBCD";
     --bright-azure: "#59B3F4";
 }
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
