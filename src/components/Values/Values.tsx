@@ -21,7 +21,7 @@ const Values = () => {
             I like thinking creatively, working fast, yet thoughtfully, on how
             my code can have longevity and scalability -- for others who may
             seek to build upon my work in the future. I always strive to
-            improve, grow, and learn alongside others so that we may all create
+            improve, grow, and learn alongside others so that from process to pixels we may all create
             better work and solutions as a whole.
           </p>
         </div>
