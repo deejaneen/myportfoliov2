@@ -8,21 +8,21 @@ import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import MyJourney from "@/components/MyJourney/MyJourney";
 export default function Home() {
   return (
-    <main className="grid grid-cols-12">
+    <main className="">
       <ReactLenis root>
-        <header className="col-span-12">
+        <header className="">
           <Navbar />
         </header>
-        <section className="col-span-12">
+        <section className="">
           <Hero />
         </section>
-        <section className="col-span-12">
+        <section className="">
           <ProjectsAndTechnologies />
         </section>
-        <section className="col-span-12">
+        <section className="">
           <MyJourney />
         </section>
-        <footer className="col-span-12">
+        <footer className="">
           <ContactMe />
         </footer>
       </ReactLenis>

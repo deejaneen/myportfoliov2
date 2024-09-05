@@ -35,7 +35,7 @@ body {
 
   /* Navbar Section */
   .navbar__container {
-    @apply w-full h-auto px-36 py-8;
+    @apply w-full h-auto pr-[5rem] pl-[4rem] pt-8;
   }
 
   /* .navbar-header {

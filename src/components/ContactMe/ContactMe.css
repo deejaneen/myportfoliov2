@@ -8,8 +8,8 @@
   );
   padding-top: 8rem;
   padding-bottom: 16rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   text-transform: uppercase;
   text-align: right;
   justify-content: end;
@@ -88,7 +88,7 @@
 
 @media screen and (max-width: 1150px) {
   .contactme__container {
-    padding: 8rem 4rem;
+    padding: 8rem 6rem;
   }
   .section-title {
     font-size: 4rem;
@@ -113,7 +113,7 @@
     flex-wrap: wrap;
   }
   .contactme__container {
-    padding: 8rem 3rem;
+    padding: 6rem 2rem;
   }
   .copyright {
     font-size: 1rem;

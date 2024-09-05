@@ -5,7 +5,7 @@ import "./ProjectsAndTechnologies.css";
 import { categoriesData } from "./technologies";
 import { projectsData } from "./projects";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa6";
 import { technologiesData } from "./technologies";
@@ -66,15 +66,26 @@ const ProjectsAndTechnologies = () => {
           belowTitle="I work with"
         />
         <div className="technology-accordion">
-          <p className="technology-sort-instructions pt-16">
+          <motion.p
+            className="technology-sort-instructions pt-16"
+            initial={{ y: 48, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: easeInOut, duration: 0.75 }}
+          >
             Click a technology to sort the projects
-          </p>
+          </motion.p>
 
           <ul className="flex flex-col items-center justify-center ">
             {category.map((elem) => {
               const { id, category } = elem;
               return (
-                <li className="min-w-full technology-container" key={id}>
+                <motion.li
+                  className="min-w-full technology-container"
+                  key={id}
+                  initial={{ y: 48, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ ease: easeInOut, duration: 0.75 }}
+                >
                   <div className="technology-title">
                     <h3
                       className="technology-item cursor-pointer"
@@ -119,7 +130,7 @@ const ProjectsAndTechnologies = () => {
                       </motion.ul>
                     )}
                   </AnimatePresence>
-                </li>
+                </motion.li>
               );
             })}
           </ul>
@@ -132,9 +143,14 @@ const ProjectsAndTechnologies = () => {
           belowTitle="portfolio"
         />
         <div className="projects-section">
-          <p className="technology-sort-instructions pt-16">
+          <motion.p
+            className="technology-sort-instructions pt-16"
+            initial={{ y: 48, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ ease: easeInOut, duration: 0.75 }}
+          >
             Click a technology to sort the projects
-          </p>
+          </motion.p>
           <ul className="flex flex-col items-center justify-center ">
             {filteredProjects.map((projects) => {
               const {
@@ -149,7 +165,13 @@ const ProjectsAndTechnologies = () => {
                 projectWeight,
               } = projects;
               return (
-                <li className="min-w-full project-container" key={id}>
+                <motion.li
+                  className="min-w-full project-container"
+                  key={id}
+                  initial={{ y: 48, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ ease: easeInOut, duration: 0.75 }}
+                >
                   <div className="project-item">
                     <div className="project-title">
                       <h3
@@ -196,7 +218,7 @@ const ProjectsAndTechnologies = () => {
                       </div>
                       <a
                         href={liveLink}
-                        className="image-container hidden lg:block"
+                        className="image-container hidden sm:block"
                         target="_blank"
                         aria-label={`Link that redirects to ${title} website`}
                       >
@@ -210,7 +232,7 @@ const ProjectsAndTechnologies = () => {
                       </a>
                     </div>
                   </div>
-                </li>
+                </motion.li>
               );
             })}
           </ul>

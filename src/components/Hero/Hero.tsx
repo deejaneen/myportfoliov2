@@ -21,7 +21,7 @@ const Hero = () => {
             TURNS IDEAS INTO <br className="lg:block hidden" />
             INTERACTIVE REALITY
           </h1>
-          <p className="location">Try catching a bubble</p>
+          <p className="description">Try catching a bubble</p>
         </div>
       </div>
       <div className="bubbles__container cursor-pointer">
