@@ -6,6 +6,8 @@ import ContactMe from "@/components/ContactMe/ContactMe";
 import "@/components/App.css";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import MyJourney from "@/components/MyJourney/MyJourney";
+import Values from "@/components/Values/Values";
+
 export default function Home() {
   return (
     <main className="">
@@ -15,6 +17,9 @@ export default function Home() {
         </header>
         <section className="">
           <Hero />
+        </section>
+        <section className="">
+          <Values />
         </section>
         <section className="">
           <ProjectsAndTechnologies />

@@ -26,6 +26,7 @@ const ProjectsAndTechnologies = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [filteredProjects, setFilteredProjects] = useState(project);
 
+  
   const toggleOpen = (id: string) => {
     setIsOpen((prevState) => ({
       ...prevState,
@@ -66,25 +67,21 @@ const ProjectsAndTechnologies = () => {
           belowTitle="I work with"
         />
         <div className="technology-accordion">
-          <motion.p
+          < p
             className="technology-sort-instructions pt-16"
-            initial={{ y: 48, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: easeInOut, duration: 0.75 }}
+             
           >
             Click a technology to sort the projects
-          </motion.p>
+          </ p>
 
           <ul className="flex flex-col items-center justify-center ">
             {category.map((elem) => {
               const { id, category } = elem;
               return (
-                <motion.li
+                < li
                   className="min-w-full technology-container"
                   key={id}
-                  initial={{ y: 48, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ ease: easeInOut, duration: 0.75 }}
+                 
                 >
                   <div className="technology-title">
                     <h3
@@ -99,7 +96,7 @@ const ProjectsAndTechnologies = () => {
                   </div>
                   <AnimatePresence>
                     {isOpen[id] && (
-                      <motion.ul className="flex items-center justify-center mapped-items-container">
+                      < ul className="flex items-center justify-center mapped-items-container">
                         {items
                           .filter((item) => item.category === category)
                           .map((elem) => {
@@ -127,10 +124,10 @@ const ProjectsAndTechnologies = () => {
                               </li>
                             );
                           })}
-                      </motion.ul>
+                      </ ul>
                     )}
                   </AnimatePresence>
-                </motion.li>
+                </ li>
               );
             })}
           </ul>
@@ -143,14 +140,12 @@ const ProjectsAndTechnologies = () => {
           belowTitle="portfolio"
         />
         <div className="projects-section">
-          <motion.p
+          < p
             className="technology-sort-instructions pt-16"
-            initial={{ y: 48, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ ease: easeInOut, duration: 0.75 }}
+             
           >
             Click a technology to sort the projects
-          </motion.p>
+          </ p>
           <ul className="flex flex-col items-center justify-center ">
             {filteredProjects.map((projects) => {
               const {
@@ -165,12 +160,10 @@ const ProjectsAndTechnologies = () => {
                 projectWeight,
               } = projects;
               return (
-                <motion.li
+                < li
                   className="min-w-full project-container"
                   key={id}
-                  initial={{ y: 48, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ ease: easeInOut, duration: 0.75 }}
+                 
                 >
                   <div className="project-item">
                     <div className="project-title">
@@ -204,7 +197,7 @@ const ProjectsAndTechnologies = () => {
                         <p className="mr-4">Tech Stack</p>
 
                         {iconLists.map((icon, index) => (
-                          <motion.span
+                          < span
                             className="tech-stack-bubble"
                             key={index}
                           >
@@ -213,7 +206,7 @@ const ProjectsAndTechnologies = () => {
                               alt={`I have worked with {title}`}
                               className="object-contain"
                             />
-                          </motion.span>
+                          </ span>
                         ))}
                       </div>
                       <a
@@ -232,7 +225,7 @@ const ProjectsAndTechnologies = () => {
                       </a>
                     </div>
                   </div>
-                </motion.li>
+                </ li>
               );
             })}
           </ul>

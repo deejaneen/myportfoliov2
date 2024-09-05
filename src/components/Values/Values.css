@@ -1,0 +1,30 @@
+.values{
+    height: auto;
+    width: 100%;
+    padding: 8rem 4rem ;
+    background-color: #d1dfbc;
+    color: #202453;
+}
+
+.values__text-box {
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+.values__text-box--text-left,
+.values__text-box--text-right{
+    width: 100%;
+}
+.values__text-box--text-right{
+    display: flex;
+    justify-content: end;
+}
+
+.values__text-box--text-left{
+    display: flex;
+    justify-content: start;
+}
+.value{
+    width: 45%;
+}

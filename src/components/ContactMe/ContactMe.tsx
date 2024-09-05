@@ -8,20 +8,8 @@ const ContactMe = () => {
   return (
     <div className="contactme__container mix-blend-multiply">
       <div className="text-container">
-        <motion.h2
-          className="section-title"
-          initial={{ y: 48, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ ease: easeInOut, duration: 0.75 }}
-        >
-          Contact Me
-        </motion.h2>
-        <motion.ul
-          className="links"
-          initial={{ y: 48, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ ease: easeInOut, duration: 0.75 }}
-        >
+        <h2 className="section-title">Contact Me</h2>
+        <ul className="links">
           <li>
             <a
               href="https://linkedin.com/in/dttomelden"
@@ -52,15 +40,8 @@ const ContactMe = () => {
               Github
             </a>
           </li>
-        </motion.ul>
-        <motion.p
-          className="copyright"
-          initial={{ y: 48, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ ease: easeInOut, duration: 0.75 }}
-        >
-          © Code and Design By Deeja
-        </motion.p>
+        </ul>
+        <p className="copyright">© Code and Design By Deeja</p>
       </div>
       <div className="bubbles__container">
         <BubblesCM />

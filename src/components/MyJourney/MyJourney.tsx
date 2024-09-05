@@ -7,7 +7,6 @@ import { BiHardHat } from "react-icons/bi";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaComputer } from "react-icons/fa6";
 import { LuGraduationCap } from "react-icons/lu";
-import { easeInOut, motion } from "framer-motion";
 
 const myjourneyData = [
   {
@@ -82,26 +81,20 @@ const MyJourney = () => {
 
         <ul className="timeline">
           {items.length > 0 && items[0].icon && (
-            <motion.li
+            <li
               className="first-circle circle-container px-8 lg:px-0"
-              initial={{ y: 48, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ ease: easeInOut, duration: 0.75 }}
             >
               <Circle icon={items[0].icon} />
               <div className="date-container w-full">{items[0].date}</div>
-            </motion.li>
+            </li>
           )}
 
           {items.map((elem, index) => {
             const { id, title, org, date, des, direction, icon } = elem;
             return (
               <li key={id} className="timeline-element-container">
-                <motion.div
+                <div
                   className="panel"
-                  initial={{ y: 48, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ ease: easeInOut, duration: 0.75 }}
                 >
                   {elem.direction === "left" ? (
                     <JourneyCard
@@ -124,17 +117,15 @@ const MyJourney = () => {
                   ) : (
                     <h4 className="date-left-container">{date}</h4>
                   )}
-                </motion.div>
+                </div>
                 {id < items.length && (
-                  <motion.div
+                  <div
                     className="circle-container"
-                    initial={{ y: 48, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ ease: easeInOut, duration: 0.75 }}
+                   
                   >
                     <Circle icon={items[index + 1].icon} />
                     <h4 className="date-container block lg:hidden">{date}</h4>
-                  </motion.div>
+                  </div>
                 )}
               </li>
             );
@@ -164,7 +155,7 @@ const JourneyCard = ({ title, org, des, direction }: MyJourneyProps) => {
     <article className="journeycard">
       <ul>
         {direction === "left" ? (
-          <motion.li className="journeycard-left">
+          <li className="journeycard-left">
             <div className="card-content-holder">
               <header>
                 <h3 className="card-title">{title}</h3>
@@ -172,9 +163,9 @@ const JourneyCard = ({ title, org, des, direction }: MyJourneyProps) => {
               </header>
               <div className="card-content">{des}</div>
             </div>
-          </motion.li>
+          </li>
         ) : (
-          <motion.li className="journeycard-right">
+          <li className="journeycard-right">
             <div className="card-content-holder">
               <header>
                 <h3 className="card-title">{title}</h3>
@@ -182,7 +173,7 @@ const JourneyCard = ({ title, org, des, direction }: MyJourneyProps) => {
               </header>
               <div className="card-content">{des}</div>
             </div>
-          </motion.li>
+          </li>
         )}
       </ul>
     </article>
