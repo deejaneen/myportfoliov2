@@ -127,6 +127,9 @@
   .contactme__container {
     overflow: hidden;
   }
+  .bubbles__container {
+    bottom: 0;
+  }
 }
 
 @media screen and (min-width: 300px) and (max-width: 450px) {

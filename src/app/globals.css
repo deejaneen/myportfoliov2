@@ -18,7 +18,7 @@ body {
     @apply text-sm;
   }
   .header-2 {
-    @apply text-7xl;
+    @apply text-7xl font-semibold;
   }
   .header-3 {
     @apply text-7xl;

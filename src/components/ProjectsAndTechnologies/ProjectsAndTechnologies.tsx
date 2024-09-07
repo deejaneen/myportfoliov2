@@ -4,13 +4,10 @@ import React, { useEffect, useState } from "react";
 import "./ProjectsAndTechnologies.css";
 import { categoriesData } from "./technologies";
 import { projectsData } from "./projects";
-import Image from "next/image";
-import { easeInOut, motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa6";
 import { technologiesData } from "./technologies";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { AnimatePresence } from "framer-motion";
+import Projects from "../Projects/Projects";
 
 const ProjectsAndTechnologies = () => {
   const [category, setCategory] = useState(categoriesData);
@@ -26,7 +23,6 @@ const ProjectsAndTechnologies = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [filteredProjects, setFilteredProjects] = useState(project);
 
-  
   const toggleOpen = (id: string) => {
     setIsOpen((prevState) => ({
       ...prevState,
@@ -67,22 +63,15 @@ const ProjectsAndTechnologies = () => {
           belowTitle="I work with"
         />
         <div className="technology-accordion">
-          < p
-            className="technology-sort-instructions pt-16"
-             
-          >
+          <p className="technology-sort-instructions pt-16">
             Click a technology to sort the projects
-          </ p>
+          </p>
 
           <ul className="flex flex-col items-center justify-center ">
             {category.map((elem) => {
               const { id, category } = elem;
               return (
-                < li
-                  className="min-w-full technology-container"
-                  key={id}
-                 
-                >
+                <li className="min-w-full technology-container" key={id}>
                   <div className="technology-title">
                     <h3
                       className="technology-item cursor-pointer"
@@ -96,7 +85,7 @@ const ProjectsAndTechnologies = () => {
                   </div>
                   <AnimatePresence>
                     {isOpen[id] && (
-                      < ul className="flex items-center justify-center mapped-items-container">
+                      <ul className="flex items-center justify-center mapped-items-container">
                         {items
                           .filter((item) => item.category === category)
                           .map((elem) => {
@@ -124,10 +113,10 @@ const ProjectsAndTechnologies = () => {
                               </li>
                             );
                           })}
-                      </ ul>
+                      </ul>
                     )}
                   </AnimatePresence>
-                </ li>
+                </li>
               );
             })}
           </ul>
@@ -140,13 +129,10 @@ const ProjectsAndTechnologies = () => {
           belowTitle="portfolio"
         />
         <div className="projects-section">
-          < p
-            className="technology-sort-instructions pt-16"
-             
-          >
+          <p className="technology-sort-instructions pt-16">
             Click a technology to sort the projects
-          </ p>
-          <ul className="flex flex-col items-center justify-center ">
+          </p>
+          <ul className="projects__bento">
             {filteredProjects.map((projects) => {
               const {
                 id,
@@ -160,72 +146,17 @@ const ProjectsAndTechnologies = () => {
                 projectWeight,
               } = projects;
               return (
-                < li
-                  className="min-w-full project-container"
-                  key={id}
-                 
-                >
-                  <div className="project-item">
-                    <div className="project-title">
-                      <h3
-                        className={`project-title-text ${
-                          projectWeight === "Heavy" ? "heavy" : "light"
-                        }`}
-                      >
-                        {title}
-                      </h3>
-                      <p className="project-description">{des}</p>
-                      <div className="project-buttons">
-                        <a
-                          className="flex items-center justify-center"
-                          href={codeLink}
-                          target="_blank"
-                          aria-label={`Link that redirects to ${title} website repository on github`}
-                        >
-                          <FaGithub /> &nbsp;Code
-                        </a>
-                        <a
-                          className="flex items-center justify-center"
-                          href={liveLink}
-                          target="_blank"
-                          aria-label={`Link that redirects to ${title} website`}
-                        >
-                          <FaPlay /> &nbsp;Live
-                        </a>
-                      </div>
-                      <div className="tech-stack">
-                        <p className="mr-4">Tech Stack</p>
-
-                        {iconLists.map((icon, index) => (
-                          < span
-                            className="tech-stack-bubble"
-                            key={index}
-                          >
-                            <img
-                              src={icon}
-                              alt={`I have worked with {title}`}
-                              className="object-contain"
-                            />
-                          </ span>
-                        ))}
-                      </div>
-                      <a
-                        href={liveLink}
-                        className="image-container hidden sm:block"
-                        target="_blank"
-                        aria-label={`Link that redirects to ${title} website`}
-                      >
-                        <Image
-                          src={img}
-                          alt={title}
-                          width={400}
-                          height={200}
-                          className="rounded image"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </ li>
+                <li className="project-container" key={id}>
+                  <Projects
+                    title={title}
+                    des={des}
+                    img={img}
+                    liveLink={liveLink}
+                    codeLink={codeLink}
+                    projectWeight={projectWeight}
+                    iconLists={iconLists}
+                  />
+                </li>
               );
             })}
           </ul>

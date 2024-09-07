@@ -1,0 +1,186 @@
+$color-primary: #3f69d7;
+$color-text-main: #202453;
+$color-vanilla-cream: #f0ebcd;
+$image-gradient: linear-gradient(
+  180deg,
+  rgba(36, 40, 86, 0) 0%,
+  rgba(36, 40, 86, 0.8) 100%
+);
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == small-phone {
+    @media (min-width: 300px) and (max-width: 599px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == tab-port {
+    @media (max-width: 900px) {
+      @content;
+    }
+  } @else if $breakpoint == tab-land {
+    @media (max-width: 1150px) {
+      @content;
+    }
+  } @else if $breakpoint == big-desktop {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+.project {
+  background: $color-primary;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0px 4px 4px rgba(32, 36, 83, 0.5);
+
+  .project__image-container {
+    overflow: clip;
+    border-radius: 15px;
+    position: relative;
+
+    .project__image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    &:hover {
+      .project__image {
+        scale: 1.1;
+        transition: all 0.3s ease;
+      }
+      .gradient {
+        opacity: 1;
+      }
+      .visit-project {
+        opacity: 1;
+        transition: all 0.3s ease;
+      }
+    }
+    .visit-project {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      // @include respond(small-phone) {
+      //   font-size: 0.75rem;
+      //   line-height: 0.75rem;
+      // }
+      color: $color-vanilla-cream;
+    }
+
+    .gradient {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.5s ease;
+      background: $image-gradient;
+
+      .tech-stack-bubble {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background-color: #f0ebcd;
+        border: 1px solid #202352;
+        border-radius: 50%;
+        padding: 0.25rem;
+        transform: translateX(10%);
+      }
+      .tech-stack {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        display: flex;
+        padding: 0.5rem 0;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 60%;
+        @include respond(small-phone) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .project__text-box {
+    padding-top: 1rem;
+    width: 100%;
+
+    .project__text--main__light {
+      color: lighten($color-vanilla-cream, 5%);
+      
+    }
+    .project__text--main__light,
+    .project__text--main__heavy {
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: 500;
+      
+      @include respond(tab-port) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+      }
+      @include respond(phone) {
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+      }
+    }
+    .project__text--main__heavy {
+      color: $color-vanilla-cream;
+
+    
+    }
+
+    .project__text--sub {
+      opacity: 0.7;
+      color: $color-vanilla-cream;
+      margin-top: 1rem;
+
+      @include respond(phone) {
+        margin-top: .5rem;
+      }
+      // @include respond(phone) {
+      //   font-size: 1rem;
+      //   line-height: 1rem;
+      // }
+    }
+
+    .project__buttons-container {
+      display: flex;
+      gap: 1rem;
+      padding-top: 1rem;
+
+      @include respond(phone) {
+        padding-top: .5rem;
+      }
+      .project__buttons {
+        // @include respond(small-phone) {
+        //   font-size: 0.75rem;
+        //   line-height: 0.75rem;
+        // }
+        color: $color-text-main;
+        padding: .25rem 1rem;
+        background-color: $color-vanilla-cream;
+        border-radius: 20px;
+        a {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

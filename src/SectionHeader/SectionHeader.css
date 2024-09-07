@@ -9,16 +9,19 @@
   line-height: 4.75rem;
   text-align: center;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 1600px) {
   .header-2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
   }
 }
 @media screen and (max-width: 1150px) {
   .header-2 {
     font-size: 4rem;
+    line-height: 4rem;
   }
   .paragraph {
     font-size: .75rem;

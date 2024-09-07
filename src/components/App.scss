@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+$color-primary: #3f69d7;
+$color-text-main: #202453;
+$color-vanilla-cream: #f0ebcd;
+$color-seafoam: #ADD7CB;
+$color-pale-sage: #D1DFBC;
+$color-light-blue: #8ABACE;
+$color-bright-azure: #59B3F4;
+$color-ocean-blue: #325491;
+$color-bright-azure: #59B3F4;
+
+$image-gradient: linear-gradient(
+  180deg,
+  rgba(36, 40, 86, 0) 0%,
+  rgba(36, 40, 86, 0.8) 100%
+);

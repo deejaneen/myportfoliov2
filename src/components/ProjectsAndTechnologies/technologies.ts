@@ -141,7 +141,7 @@ export const technologiesData = [
   {
     id: 19,
     icon: "/icons/github.svg",
-    title: "GitHub",
+    title: "Github",
     category: "Development Tool",
   },
   {

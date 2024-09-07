@@ -12,6 +12,9 @@
 .my-journey {
   padding: 6rem 0;
 }
+.myjourney__header {
+  color: #202453;
+}
 .timeline {
   display: flex;
   align-items: center;
@@ -39,7 +42,7 @@
   color: #202453;
 }
 .pillar {
-  width: .5rem;
+  width: 0.5rem;
   height: 100%;
   background-color: #add7cb;
   margin: auto;
@@ -47,19 +50,25 @@
 
 .card-content-holder {
   padding: 2rem;
+  
 }
 .card-title {
   font-weight: 600;
   color: #242856;
   font-size: 2rem;
+  line-height: 2rem ;
 }
 .card-description {
   color: #242856;
   font-size: 1rem;
+  line-height: 1rem;
+  margin-top: 1rem;
 }
 .card-content {
   color: #f0ebcd;
   font-size: 1rem;
+  line-height: 1rem;
+  margin-top: 1rem;
 }
 
 .panel {
@@ -69,7 +78,7 @@
   align-items: center;
   margin: auto;
   gap: 2rem;
-  padding: 0 4rem ;
+  padding: 0 4rem;
 }
 .date-right-container {
   text-align: right;
@@ -85,8 +94,8 @@
   display: flex;
   flex-direction: column;
   gap: 0 2rem;
-  box-shadow: 0px 4px 4px rgba(32, 36, 83, .5);
-  border-radius: .75rem;
+  box-shadow: 0px 4px 4px rgba(32, 36, 83, 0.5);
+  border-radius: 0.75rem;
   padding: 1rem;
   background-color: #8abace;
   align-items: center;
@@ -98,15 +107,15 @@
 .journeycard-right {
   text-align: left;
 }
-.date-container{
-    display: none;
-  }
-  .circle-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.date-container {
+  display: none;
+}
+.circle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 @media screen and (max-width: 2000px) {
 }
 
@@ -124,8 +133,7 @@
   }
   .date-container {
     text-align: center;
-    font-size: .75rem;
-
+    font-size: 0.75rem;
   }
   .timeline {
     display: flex;
@@ -134,7 +142,7 @@
     padding-top: 4rem;
   }
   .pillar {
-    width: .5rem;
+    width: 0.5rem;
     height: 100%;
   }
   .timeline-element-container {
@@ -145,32 +153,32 @@
   .journeycard-left {
     text-align: left;
   }
-  .circle-container{
+  .circle-container {
     justify-content: start;
     padding-top: 2rem;
   }
   .circle {
     margin: 0;
   }
-  .first-circle{
+  .first-circle {
     width: 100%;
   }
-  .circle-container:first-child{
+  .circle-container:first-child {
     padding-top: 0;
   }
   .date-right-container,
   .date-left-container {
     display: none;
   }
-  .date-container{
+  .date-container {
     display: block;
   }
 }
 @media screen and (max-width: 650px) {
-  .panel{
+  .panel {
     padding: 2rem 0;
   }
-  .circle-container:first-child{
+  .circle-container:first-child {
     padding-top: 0;
   }
 }
@@ -182,14 +190,14 @@
   .timeline {
     padding: 0 2rem;
   }
-  .card-title{
+  .card-title {
     font-size: 1.25rem;
   }
   .card-content,
   .card-description {
     font-size: 1rem;
   }
-  .circle-container:first-child{
+  .circle-container:first-child {
     padding-top: 4rem;
   }
 }

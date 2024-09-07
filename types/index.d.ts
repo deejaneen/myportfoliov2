@@ -22,6 +22,15 @@ declare interface Project {
   codeLink?: string;
   projectWeight: string;
 }
+declare interface ProjectsProps {
+  title: string;
+  des: string;
+  img: string;
+  iconLists: string[];
+  liveLink?: string;
+  codeLink?: string;
+  projectWeight: string;
+}
 
 declare interface MyJourneyProps {
   title: string;

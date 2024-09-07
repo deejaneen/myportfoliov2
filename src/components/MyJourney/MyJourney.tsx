@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./MyJourney.css";
 import SectionHeader from "@/SectionHeader/SectionHeader";
 import { BiHardHat } from "react-icons/bi";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaComputer } from "react-icons/fa6";
 import { LuGraduationCap } from "react-icons/lu";
+import { useMotionValue, useSpring, useTransform, motion } from "framer-motion";
 
 const myjourneyData = [
   {
@@ -68,10 +69,11 @@ const myjourneyData = [
 
 const MyJourney = () => {
   const [items, setItems] = useState(myjourneyData);
+
   return (
     <div className="bg-vanilla-cream myjourney__container">
       <div className="my-journey">
-        <header className="header-2-align">
+        <header className="header-2-align myjourney__header">
           <SectionHeader
             title="My Journey"
             aboveTitle="Follow"
@@ -81,9 +83,7 @@ const MyJourney = () => {
 
         <ul className="timeline">
           {items.length > 0 && items[0].icon && (
-            <li
-              className="first-circle circle-container px-8 lg:px-0"
-            >
+            <li className="first-circle circle-container px-8 lg:px-0">
               <Circle icon={items[0].icon} />
               <div className="date-container w-full">{items[0].date}</div>
             </li>
@@ -93,9 +93,7 @@ const MyJourney = () => {
             const { id, title, org, date, des, direction, icon } = elem;
             return (
               <li key={id} className="timeline-element-container">
-                <div
-                  className="panel"
-                >
+                <div className="panel">
                   {elem.direction === "left" ? (
                     <JourneyCard
                       title={title}
@@ -119,10 +117,7 @@ const MyJourney = () => {
                   )}
                 </div>
                 {id < items.length && (
-                  <div
-                    className="circle-container"
-                   
-                  >
+                  <div className="circle-container">
                     <Circle icon={items[index + 1].icon} />
                     <h4 className="date-container block lg:hidden">{date}</h4>
                   </div>
@@ -151,8 +146,42 @@ const Pillar = () => {
 };
 
 const JourneyCard = ({ title, org, des, direction }: MyJourneyProps) => {
+  const ref = useRef<HTMLElement  | null>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const top = useTransform(mouseYSpring, [0, 0.5], ["0%", "5%"]);
+  const left = useTransform(mouseXSpring, [0, 0.5], ["0%", "5%"]);
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement >) => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const xPct = mouseX / width - 0.5;
+      const yPct = mouseY / height - 0.5;
+      x.set(xPct);
+      y.set(yPct);
+    }
+  };
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
   return (
-    <article className="journeycard">
+    <motion.article
+      className="journeycard  relative top-0 left-0"
+      style={{ top, left }}
+      transition={{ type: "spring" }}
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      initial="initial"
+      whileHover="whileHover"
+    >
       <ul>
         {direction === "left" ? (
           <li className="journeycard-left">
@@ -176,6 +205,6 @@ const JourneyCard = ({ title, org, des, direction }: MyJourneyProps) => {
           </li>
         )}
       </ul>
-    </article>
+    </motion.article>
   );
 };
